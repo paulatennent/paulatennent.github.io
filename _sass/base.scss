@@ -10,6 +10,9 @@ $body-foreground: $gallery !default;
 $header: $conifer !default;
 $blockquote-color: $silver-chalice !default;
 $blockquote-border: $dove-grey !default;
+$a: $hotpink !default;
+$ahover: $lightpink !default;
+
 
 body {
   margin: 0;
@@ -46,7 +49,7 @@ li {
 /* Header, <header>
    header   - container
    h1       - project name
-   h2       - project description
+   a        - project description
 */
 
 header {
@@ -79,10 +82,9 @@ header h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-header h2 {
+header a {
   font-size: 18px;
   font-weight: 300;
-  color: #666;
 }
 
 /* Main Content
@@ -235,8 +237,12 @@ hr {
 */
 
 a {
-  color: #63c0f5;
-  text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+  color: $a;
+  text-shadow: 0 0 5px rgba(255, 130, 195, 0.577);
+}
+
+a:hover {
+  color: $ahover;
 }
 
 a:active, a:focus {

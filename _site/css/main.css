@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 { margin: 0 0 20px; }
 
 li { line-height: 1.4; }
 
-/* Header, <header> header   - container h1       - project name h2       - project description */
+/* Header, <header> header   - container h1       - project name a        - project description */
 header { background: rgba(0, 0, 0, 0.1); border-bottom: 1px dashed #b5e853; padding: 20px; margin: 0 0 40px 0; }
 
 .header-links { text-align: center; }
@@ -64,7 +64,7 @@ header { background: rgba(0, 0, 0, 0.1); border-bottom: 1px dashed #b5e853; padd
 
 header h1 { font-size: 24px; line-height: 1.5; margin: 0; text-align: center; font-weight: bold; font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace; color: #b5e853; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(181, 232, 83, 0.1), 0 0 10px rgba(181, 232, 83, 0.1); letter-spacing: -1px; -webkit-font-smoothing: antialiased; }
 
-header h2 { font-size: 18px; font-weight: 300; color: #666; }
+header a { font-size: 18px; font-weight: 300; }
 
 /* Main Content
 */
@@ -115,7 +115,9 @@ hr { height: 0; border: 0; border-bottom: 1px dashed #b5e853; color: #b5e853; }
 .btn-github .icon { opacity: 0.6; background: url("../images/blacktocat.png") 0 0 no-repeat; }
 
 /* Links a, a:hover, a:visited */
-a { color: #63c0f5; text-shadow: 0 0 5px rgba(104, 182, 255, 0.5); }
+a { color: #ff0055; text-shadow: 0 0 5px rgba(255, 130, 195, 0.577); }
+
+a:hover { color: #ffbbd1; }
 
 a:active, a:focus { outline: 0; border: none; -moz-outline-style: none; }
 
