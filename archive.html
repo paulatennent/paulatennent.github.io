@@ -16,16 +16,19 @@ title: Archive
 
     {%for post in site.posts %}
     <!--exceutes if post.next is NOT found-->  
+    <!--this checks if a new year is needed to be added before the current item--> 
       {% unless post.next %}
         <ul>
           {% else %}
+          <!-- year = this posts year, nyear = next posts year-->
           {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
           {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+          <!-- if the year is different, then end the list, add a new year and start the list again-->
           {% if year != nyear %}
-        </ul>
-        <h3>{{ post.date | date: '%Y' }}</h3>
-        <ul>
-        {% endif %}
+            </ul>
+            <h3>{{ post.date | date: '%Y' }}</h3>
+            <ul>
+          {% endif %}
       {% endunless %}
         <!--list posts for each year-->
         <li><time>{{ post.date | date:"%d %b" }} - </time>

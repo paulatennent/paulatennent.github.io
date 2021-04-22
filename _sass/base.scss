@@ -42,6 +42,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 20px;
 }
 
+strong {
+  font-weight: 900;
+  color: $conifer_light;
+}
+
 li {
   line-height: 1.4 ;
 }
@@ -143,6 +148,7 @@ dt {
 }
 
 ul li {
+  //list-style: symbols(&#9733);
   list-style-image:url('../assets/bullet.png');
 }
 

@@ -1,0 +1,60 @@
+I";<p>Some of the main things that Richard wanted us to get out of this course were:</p>
+<ul>
+  <li><strong>Ability to analysis situations</strong>
+    <ul>
+      <li>not just believing everything you are told</li>
+      <li>seeing things from multiple perspectives</li>
+      <li>finding the root cause of problems etc..)</li>
+    </ul>
+  </li>
+  <li><strong>Have an Security Engineering Mindset</strong></li>
+  <li><strong>Security Eyes</strong>
+    <ul>
+      <li>be curious (how can you get around systems in place)</li>
+      <li>be cautious (who is collecting your data, what are peoples motives)</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="attacker-vs-defender-mindset">Attacker vs Defender Mindset</h1>
+
+<p>Think about how secure you think your house is (all the defences put in place to stop someone from breaking ing). Now think of all the ways that someone could get into your house.</p>
+
+<p>Defending is FAR more difficult than attacking, as a defender you have to defend ALL points, but as an attacker, you only ned to attack one part of the system to get through.</p>
+
+<p>The <strong>defender mindset</strong> allows you to congratulate yourself on all the defence systems put in place and ignore any gaps that could cause an attack, while the <strong>attacker mindset</strong> encourages you to find any small flaws in the system that could be exploited. Even as someone defending a system, you should have the attacker mindset. <strong>Attacker Mindset &gt; Defender Mindset</strong>.</p>
+
+<h2 id="security-engineer-mindset">Security Engineer Mindset</h2>
+
+<ul>
+  <li>When thinking about Attackers in Cyber, there is no such thing as “Good Guys” and “Bad Guys”, instead, we should talk about <strong>“Gold Guys”</strong> (How much money are you willing to pay me to find an exploit).
+    <ul>
+      <li>No system is 100% secure, if you pay someone enough money, they will be about to find a flaw in a system -&gt; this is where 0 Day Prizes are useful.</li>
+    </ul>
+  </li>
+  <li><strong>“The problem with ‘X’ “</strong>: Whenever humans create anything (lets call it x), although we might feel like there are a bunch of amazing things with x, there is always the problems that come along with x.</li>
+  <li><strong>Problem Solving</strong>: Make sure to never claim that you have solved the problem, then put it down. There are always more than one way to solve a problem, each have pros/cons/consequences.</li>
+  <li><strong>Humans are the weakest link</strong> in security:
+    <ul>
+      <li>Errors in code</li>
+      <li>Bad Passwords</li>
+      <li>Social Engineering</li>
+    </ul>
+  </li>
+</ul>
+
+<p>1, 3, 7, 12, 18, 26, 35, 45, 56, ?</p>
+
+<p>+2, - +4, +5, +6, - +8, +9, +10, +11</p>
+
+<h1 id="ciphers">Ciphers</h1>
+
+<h1 id="terminology">Terminology</h1>
+
+<ul>
+  <li><strong>0 Day Vulnerability</strong>: An exploit in a system that the current owners don’t yet know about. Most companies have a reward system for finding 0 Day Vulnerability.</li>
+  <li><strong>Single points of failure</strong>: a part of a system that if it fails, will stop the entire system from working. Undesirable in systems that are supposed to be available and reliable.</li>
+  <li><strong>Social Engineering</strong>: Taking advantage that humans are nearly always the weakest link of a system. An example of this are social scams such as romance dating scams.</li>
+</ul>
+
+:ET

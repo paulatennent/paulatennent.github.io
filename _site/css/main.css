@@ -53,6 +53,8 @@ section { display: block; margin: 0 0 20px 0; }
 
 h1, h2, h3, h4, h5, h6 { margin: 0 0 20px; }
 
+strong { font-weight: 900; color: #e3ffae; }
+
 li { line-height: 1.4; }
 
 /* Header, <header> header   - container h1       - project name a        - project description */

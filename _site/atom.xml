@@ -12,6 +12,176 @@
     </author>
     
       <item>
+        <title>COMP6841 - Intro to Security</title>
+        <description>&lt;h1 id=&quot;index&quot;&gt;Index&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#AttackerVsDefender&quot;&gt;Attacker Vs Defender&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#TrustAndRisk&quot;&gt;Trust and Risk&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#Ciphers&quot;&gt;Ciphers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#Terminology&quot;&gt;Terminology&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some of the main things that Richard wanted us to get out of this course were:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Ability to analysis situations&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;not just believing everything you are told&lt;/li&gt;
+      &lt;li&gt;seeing things from multiple perspectives&lt;/li&gt;
+      &lt;li&gt;finding the root cause of problems etc..)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Have an Security Engineering Mindset&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Security Eyes&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;be curious (how can you get around systems in place)&lt;/li&gt;
+      &lt;li&gt;be cautious (who is collecting your data, what are peoples motives)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;attacker-vs-defender-mindset&quot;&gt;&lt;a id=&quot;AttackerVsDefender&quot;&gt;&lt;/a&gt;Attacker vs Defender Mindset&lt;/h1&gt;
+
+&lt;p&gt;Think about how secure you think your house is (all the defences put in place to stop someone from breaking in). Now think of all the ways that someone could get into your house.&lt;/p&gt;
+
+&lt;p&gt;Defending is FAR more difficult than attacking, as a defender you have to defend ALL points, but as an attacker, you only ned to attack one part of the system to get through.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;defender mindset&lt;/strong&gt; allows you to congratulate yourself on all the defence systems put in place and ignore any gaps that could cause an attack, while the &lt;strong&gt;attacker mindset&lt;/strong&gt; encourages you to find any small flaws in the system that could be exploited. Even as someone defending a system, you should have the attacker mindset. &lt;strong&gt;Attacker Mindset &amp;gt; Defender Mindset&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;security-engineer-mindset&quot;&gt;Security Engineer Mindset&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;When thinking about Attackers in Cyber, there is no such thing as “Good Guys” and “Bad Guys”, instead, we should talk about &lt;strong&gt;“Gold Guys”&lt;/strong&gt; (How much money are you willing to pay me to find an exploit).
+    &lt;ul&gt;
+      &lt;li&gt;No system is 100% secure, if you pay someone enough money, they will be about to find a flaw in a system -&amp;gt; this is where 0 Day Prizes are useful.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;“The problem with X”&lt;/strong&gt;: Whenever humans create anything (lets call it x), although we might feel like there are a bunch of amazing things with x, there is always the problems that come along with x.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Problem Solving&lt;/strong&gt;: Make sure to never claim that you have solved the problem, and can now stop thinking about the issue. There are always more than one way to solve a problem, each have pros/cons/consequences and usually there is no &lt;em&gt;correct&lt;/em&gt; or &lt;em&gt;best&lt;/em&gt; answer.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Humans are the weakest link&lt;/strong&gt; in security:
+    &lt;ul&gt;
+      &lt;li&gt;Errors in code&lt;/li&gt;
+      &lt;li&gt;Bad Passwords&lt;/li&gt;
+      &lt;li&gt;Social Engineering&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;trust-and-risk&quot;&gt;&lt;a id=&quot;TrustAndRisk&quot;&gt;&lt;/a&gt;Trust and Risk&lt;/h1&gt;
+
+&lt;p&gt;Every Cyber attack is a &lt;strong&gt;breach of trust&lt;/strong&gt;. Most systems that humans create all rely on trust to work (you trust that the rules of chess you are playing by are the same as your opponent).&lt;/p&gt;
+
+&lt;h2 id=&quot;commitment&quot;&gt;Commitment&lt;/h2&gt;
+
+&lt;p&gt;What if we can’t trust the other party, sometimes we can use the idea of commitment to make sure that people stick to their word.&lt;/p&gt;
+
+&lt;p&gt;Here are some problems that can be fixed with commitment:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;I’ve finished my exam paper at the correct time, but the internet went out and I can’t email the exam. How can I submit my exam later and have people trust that its the same exam as when I ended&lt;/li&gt;
+  &lt;li&gt;I’m on the phone with someone who is flipping a coin. If I tell them my side, they can claim the coin landed on the other side. How can I commit to a side without letting the other person know. Also, how can the other person trust that when I reveal the side later, its the same as before the coin was tossed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Commitment can be done by hashing the message, sending the hash when you make the commitment. Later, send the actual message and other parties can check the hashes are the same, hence trust your message. This both makes sure that others can’t seem the message (due to the one way-ness of hashes) before a certain time, AND others can trust that we didn’t change our message after being revealed.&lt;/p&gt;
+
+&lt;p&gt;There are a few flaws that need fixing:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;What if we memories the hashes of things like “heads” and “tails”&lt;/li&gt;
+  &lt;li&gt;What if I brute force both “heads” and “tails” with a random number at the end so that they have the same hash (which can be done via a &lt;a href=&quot;# BirthdayAttacks&quot;&gt;birthday attack&lt;/a&gt;!).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To fix these problems, we usually &lt;strong&gt;sandwich the message with 2 random numbers decided by each parties&lt;/strong&gt; so that a brute force is impossible, and hashes are unmemorable.&lt;/p&gt;
+
+&lt;h2 id=&quot;risk&quot;&gt;Risk&lt;/h2&gt;
+
+&lt;p&gt;One way that we can think about risk, is &lt;strong&gt;Risk vs Reward&lt;/strong&gt;, There are a few problems with risk that are important to take into account:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Risk is invisible, but outcomes are not&lt;/strong&gt;! This causes humans to be very bad at analyzing risk and making appropriate decisions. When you get away with a risk, it’s only really luck that let you get away with it, but you are the same person the person who happened to get the bad end of the risk stick&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Risk changes base on our experiences&lt;/strong&gt;, after experiencing the consequences of the risk, humans seem to have a different equation of risk vs reward, but the situation is exactly the same.
+    &lt;ul&gt;
+      &lt;li&gt;this can sometimes be a good thing, &lt;strong&gt;if taking risks lead to learning about our mistakes, then taking the risk was a good for our understanding of the consequences&lt;/strong&gt;.&lt;/li&gt;
+      &lt;li&gt;this is the main reason why humans are terrible at low probability, high risk situation, we don’t have enough collective experience with the consequence to properly understand the risk vs reward equation.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Another way of thinking about risk is &lt;strong&gt;% chance of happening vs % seriousness of outcome&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;Low Probability&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;High Probability&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Low Seriousness:&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;Fish Bite&lt;/td&gt;
+      &lt;td&gt;Tongue Bite&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;High Seriousness:&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;Alien Invasion (danger zone)&lt;/td&gt;
+      &lt;td&gt;Earth Quake in Japan&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Anything in the ‘High Probability’ are usually alright, even if they have high seriousness, as we have most likely dealt with the issue before and know how to prepare and address the situation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Low Probability High Seriousness risks are the danger zone&lt;/strong&gt;, as the risk is currently invisible and we usually wont prepare for it very well. The conundrum is that there are an infinite amount of Low Probability High Seriousness risks, so we need to be able to manage how we allocate time and resources to each one properly. (e.g, we give lots of time and money to terrorist attacks! but when COVID came along, we didn’t have any procedures or infrastructure in pace to help manage it!).&lt;/p&gt;
+
+&lt;h2 id=&quot;type-1-type-2-errors&quot;&gt;Type 1 Type 2 Errors&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Type 1 Type 2 errors are false positive and false negative errors&lt;/strong&gt;, which end up &lt;strong&gt;balance each other out&lt;/strong&gt; (when one goes up, the other goes down).&lt;/p&gt;
+
+&lt;p&gt;An example of type one type two errors are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Type 1 (the FALSE POSITIVE): test says you are pregnant, but you really aren’t&lt;/li&gt;
+  &lt;li&gt;Type 2 (the FALSE NEGATIVE): test says you aren’t pregnant, but you really are.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;some other examples of T1T2 Errors:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;giving welfare to people who don’t need it vs someone who needs it not getting it&lt;/li&gt;
+  &lt;li&gt;accuse someone of being a terrorist (and potentially get them in jail), or let a terrorist slip through security and cause an attack?&lt;/li&gt;
+  &lt;li&gt;An attacker signing in as an admin vs an admin being blocked to sign in as it suspects them being an attacker!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With most things, there will be a type 1 and type 2 errors, we should analyse the risk of each situation to figure out which side is less risky. Contrary to this, in real life, the visible side usually gets the most attention (people not being able to sign in is much more visible than the risk of someone else signing into their account!)&lt;/p&gt;
+
+&lt;p&gt;Make sure to look for T1T2 errors in politics and real life! They are everywhere! Think about which side is better/worse.&lt;/p&gt;
+
+&lt;h1 id=&quot;secrets&quot;&gt;&lt;a id=&quot;Secrets&quot;&gt;&lt;/a&gt;Secrets&lt;/h1&gt;
+
+&lt;h1 id=&quot;ciphers&quot;&gt;&lt;a id=&quot;Ciphers&quot;&gt;&lt;/a&gt;Ciphers&lt;/h1&gt;
+
+&lt;p&gt;hello&lt;/p&gt;
+
+&lt;h1 id=&quot;terminology&quot;&gt;&lt;a id=&quot;Terminology&quot;&gt;&lt;/a&gt;Terminology&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;0 Day Vulnerability&lt;/strong&gt;: An exploit in a system that the current owners don’t yet know about. Most companies have a reward system for finding 0 Day Vulnerability.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DOS (denial of service)&lt;/strong&gt;: an attack which makes a network unavailable to the intended users, usually done by flooding the host with requests.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ransomware&lt;/strong&gt;: Malicious software designed to block access to a computer system until a sum of money is paid&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Malware&lt;/strong&gt;: Software that is specifically designed to disrupt, damage, or gain unauthorized access to a computer system.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Single points of failure&lt;/strong&gt;: a part of a system that if it fails, will stop the entire system from working. Undesirable in systems that are supposed to be available and reliable.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Social Engineering&lt;/strong&gt;: Taking advantage that humans are nearly always the weakest link of a system. An example of this are social scams such as romance dating scams.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tamper Proof&lt;/strong&gt;: Something that is designed so that it cannot be interfered with&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tamper Evident&lt;/strong&gt;: Something that is designed to clearly reveal and interference with its contents (e.g. jam jars that pop up when opened)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tranquility&lt;/strong&gt;: where you assume that in a static frozen position, everyone has roles and responsibilities that balance each other and everything looks fine. This is a flawed assumption, since things change over time, people change roles etc…&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 22 Apr 2021 00:00:00 +1000</pubDate>
+        <link>//COMP6821</link>
+        <link href="/COMP6821"/>
+        <guid isPermaLink="true">/COMP6821</guid>
+      </item>
+    
+      <item>
         <title>Sample Page</title>
         <description>&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, &lt;del&gt;strikethrough&lt;/del&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;keyword&lt;/code&gt;.&lt;/p&gt;
 
