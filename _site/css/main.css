@@ -90,7 +90,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: normal; font-family: Monaco, "Bitstream Ve
 
 dt { font-style: italic; font-weight: bold; }
 
-ul li { list-style-image: url("../assets/bullet.png"); }
+ul li { list-style-type: "\2605"; padding-inline-start: 10px; }
+
+ul li::marker { color: #b5e853; }
 
 blockquote { color: #aaa; padding-left: 10px; border-left: 1px dotted #666; }
 
@@ -98,11 +100,11 @@ pre { background: rgba(0, 0, 0, 0.9); border: 1px solid rgba(255, 255, 255, 0.15
 
 code.highlighter-rouge { background: rgba(0, 0, 0, 0.9); border: 1px solid rgba(255, 255, 255, 0.15); padding: 0px 3px; margin: 0px -3px; color: #aa759f; border-radius: 2px; }
 
-table { width: 100%; margin: 0 0 20px 0; }
+table { margin: 0 0 20px 0; }
 
-th { text-align: left; border-bottom: 1px dashed #b5e853; padding: 5px 10px; }
+th { text-align: left; border-bottom: 1px dashed #b5e853; border-top: 1px solid #666; border-left: 1px solid #666; border-right: 1px solid #666; padding: 5px 10px; }
 
-td { padding: 5px 10px; }
+td { padding: 5px 10px; border: 1px solid #666; }
 
 hr { height: 0; border: 0; border-bottom: 1px dashed #b5e853; color: #b5e853; }
 

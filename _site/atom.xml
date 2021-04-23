@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hacker-Blog</title>
-    <description>A Jekyll Blog Theme For Hackers</description>
+    <title>Pooplas Pot</title>
+    <description>hmmm nothing to find here, literally</description>
     <link></link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     <author>
-      <name>SomeHacker</name>
-      <email>someone@somewebsite.somedomain</email>
+      <name>Paula</name>
+      <email>pjtennent@gmail.com</email>
       <uri>https://ashishchaudhary.in/hacker-blog</uri>
     </author>
     
@@ -16,9 +16,46 @@
         <description>&lt;h1 id=&quot;index&quot;&gt;Index&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#AttackerVsDefender&quot;&gt;Attacker Vs Defender&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#TrustAndRisk&quot;&gt;Trust and Risk&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#Ciphers&quot;&gt;Ciphers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#AttackerVsDefender&quot;&gt;Attacker Vs Defender&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Security Engineer Mindset&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#TrustAndRisk&quot;&gt;Trust and Risk&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Commitment&lt;/li&gt;
+      &lt;li&gt;Risk&lt;/li&gt;
+      &lt;li&gt;Type 1 Type 2 Errors&lt;/li&gt;
+      &lt;li&gt;Dealing with Risk&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#PhysicalSecurity&quot;&gt;Physical Security&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Recon and OSINT&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#Secrets&quot;&gt;Secrets&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Security by Obscurity&lt;/li&gt;
+      &lt;li&gt;Passwords&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#Ciphers&quot;&gt;Ciphers&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Caesar Cipher and Substitution Cipher&lt;/li&gt;
+      &lt;li&gt;Codes&lt;/li&gt;
+      &lt;li&gt;Stenography&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ExponentialGrowthandBitsofWork&quot;&gt;Exponential Growth and Bits of Work&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Exponential Laws&lt;/li&gt;
+      &lt;li&gt;Information and Exponentials&lt;/li&gt;
+      &lt;li&gt;Binary and Bits of Work&lt;/li&gt;
+      &lt;li&gt;Avoiding Brute for Attacks&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#HumansAndSecurity&quot;&gt;Humans and Security&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#Terminology&quot;&gt;Terminology&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -40,6 +77,8 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
 &lt;h1 id=&quot;attacker-vs-defender-mindset&quot;&gt;&lt;a id=&quot;AttackerVsDefender&quot;&gt;&lt;/a&gt;Attacker vs Defender Mindset&lt;/h1&gt;
 
 &lt;p&gt;Think about how secure you think your house is (all the defences put in place to stop someone from breaking in). Now think of all the ways that someone could get into your house.&lt;/p&gt;
@@ -53,7 +92,7 @@
 &lt;ul&gt;
   &lt;li&gt;When thinking about Attackers in Cyber, there is no such thing as “Good Guys” and “Bad Guys”, instead, we should talk about &lt;strong&gt;“Gold Guys”&lt;/strong&gt; (How much money are you willing to pay me to find an exploit).
     &lt;ul&gt;
-      &lt;li&gt;No system is 100% secure, if you pay someone enough money, they will be about to find a flaw in a system -&amp;gt; this is where 0 Day Prizes are useful.&lt;/li&gt;
+      &lt;li&gt;No system is 100% secure, if you pay someone enough money, they will be able to find a flaw in a system -&amp;gt; this is where 0 Day Prizes are useful.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;“The problem with X”&lt;/strong&gt;: Whenever humans create anything (lets call it x), although we might feel like there are a bunch of amazing things with x, there is always the problems that come along with x.&lt;/li&gt;
@@ -67,13 +106,21 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
 &lt;h1 id=&quot;trust-and-risk&quot;&gt;&lt;a id=&quot;TrustAndRisk&quot;&gt;&lt;/a&gt;Trust and Risk&lt;/h1&gt;
 
 &lt;p&gt;Every Cyber attack is a &lt;strong&gt;breach of trust&lt;/strong&gt;. Most systems that humans create all rely on trust to work (you trust that the rules of chess you are playing by are the same as your opponent).&lt;/p&gt;
 
+&lt;p&gt;What if we can’t trust the other party, there are a few ways to solve this problem:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Put incentive into the other party which align with your objective -&amp;gt; if one person cuts the cake the the other person chooses, its in the incentive of the cutter to make the pieces as even as possible.&lt;/li&gt;
+  &lt;li&gt;Commitment (as seen below vvv).&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;commitment&quot;&gt;Commitment&lt;/h2&gt;
 
-&lt;p&gt;What if we can’t trust the other party, sometimes we can use the idea of commitment to make sure that people stick to their word.&lt;/p&gt;
+&lt;p&gt;If we can’t trust the other party, sometimes we can use the idea of commitment to make sure that people stick to their word.&lt;/p&gt;
 
 &lt;p&gt;Here are some problems that can be fixed with commitment:&lt;/p&gt;
 &lt;ul&gt;
@@ -86,7 +133,7 @@
 &lt;p&gt;There are a few flaws that need fixing:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;What if we memories the hashes of things like “heads” and “tails”&lt;/li&gt;
-  &lt;li&gt;What if I brute force both “heads” and “tails” with a random number at the end so that they have the same hash (which can be done via a &lt;a href=&quot;# BirthdayAttacks&quot;&gt;birthday attack&lt;/a&gt;!).&lt;/li&gt;
+  &lt;li&gt;What if I brute force both “heads” and “tails” with a random number at the end so that they have the same hash (which can be done via a &lt;a href=&quot;#BirthdayAttacks&quot;&gt;birthday attack&lt;/a&gt;!).&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;To fix these problems, we usually &lt;strong&gt;sandwich the message with 2 random numbers decided by each parties&lt;/strong&gt; so that a brute force is impossible, and hashes are unmemorable.&lt;/p&gt;
@@ -111,18 +158,18 @@
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt;&lt;strong&gt;Low Probability&lt;/strong&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;strong&gt;High Probability&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;**Low Probability**&lt;/th&gt;
+      &lt;th&gt;**High Probability**&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Low Seriousness:&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;**Low Seriousness:**&lt;/td&gt;
       &lt;td&gt;Fish Bite&lt;/td&gt;
       &lt;td&gt;Tongue Bite&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;High Seriousness:&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;**High Seriousness:**&lt;/td&gt;
       &lt;td&gt;Alien Invasion (danger zone)&lt;/td&gt;
       &lt;td&gt;Earth Quake in Japan&lt;/td&gt;
     &lt;/tr&gt;
@@ -133,14 +180,24 @@
 
 &lt;p&gt;&lt;strong&gt;Low Probability High Seriousness risks are the danger zone&lt;/strong&gt;, as the risk is currently invisible and we usually wont prepare for it very well. The conundrum is that there are an infinite amount of Low Probability High Seriousness risks, so we need to be able to manage how we allocate time and resources to each one properly. (e.g, we give lots of time and money to terrorist attacks! but when COVID came along, we didn’t have any procedures or infrastructure in pace to help manage it!).&lt;/p&gt;
 
+&lt;h3 id=&quot;other-types-of-risk-include&quot;&gt;Other types of risk include:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Independent vs correlated risks&lt;/strong&gt; -&amp;gt; Humans usually assume things are independent as correlated risks are harder to understand.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Causation vs Corelation&lt;/strong&gt; (Ice-cream causes violence in summer).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Random errors vs Systematic errors&lt;/strong&gt; -&amp;gt; random errors seem to even out, but systematic errors can build up over time.&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;type-1-type-2-errors&quot;&gt;Type 1 Type 2 Errors&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;Type 1 Type 2 errors are false positive and false negative errors&lt;/strong&gt;, which end up &lt;strong&gt;balance each other out&lt;/strong&gt; (when one goes up, the other goes down).&lt;/p&gt;
 
 &lt;p&gt;An example of type one type two errors are:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Type 1 (the FALSE POSITIVE): test says you are pregnant, but you really aren’t&lt;/li&gt;
-  &lt;li&gt;Type 2 (the FALSE NEGATIVE): test says you aren’t pregnant, but you really are.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Type 1 (the FALSE POSITIVE)&lt;/strong&gt;: test says you are pregnant, but you really aren’t&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Type 2 (the FALSE NEGATIVE)&lt;/strong&gt;: test says you aren’t pregnant, but you really are.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;some other examples of T1T2 Errors:&lt;/p&gt;
@@ -152,25 +209,207 @@
 
 &lt;p&gt;With most things, there will be a type 1 and type 2 errors, we should analyse the risk of each situation to figure out which side is less risky. Contrary to this, in real life, the visible side usually gets the most attention (people not being able to sign in is much more visible than the risk of someone else signing into their account!)&lt;/p&gt;
 
-&lt;p&gt;Make sure to look for T1T2 errors in politics and real life! They are everywhere! Think about which side is better/worse.&lt;/p&gt;
+&lt;p&gt;Make sure to look for T1T2 errors in politics and real life! They are everywhere! Think about which side is better/worse. Do we want to balance the risks or not? If we look at T1T2 errors with the COVID hotel quarantine, the government decided to tip the scale to one side (false positive), since having a few cases slip through the gaps would be a similar outcome to not quarantining at all.)&lt;/p&gt;
+
+&lt;h2 id=&quot;dealing-with-risk&quot;&gt;Dealing with Risk&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Mitigate the risk&lt;/strong&gt;: Reduce the impact, does not reduce the probability.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pass on the risk&lt;/strong&gt;: e.g. casinos pass risk to government (invisible)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Immunize/Invest&lt;/strong&gt;: Invest in the probability of risk actually occurring. e.g. an airline company risks oil prices rising, they will then invest in oil to balance out their portfolio in case the risk comes to fruition.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Accept&lt;/strong&gt;: ehh its ok&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pool&lt;/strong&gt;: share risk amongst lots of people (eg. Insurance)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;physical-security&quot;&gt;&lt;a id=&quot;PhysicalSecurity&quot;&gt;&lt;/a&gt;Physical Security&lt;/h1&gt;
+
+&lt;p&gt;Even for cyber security, physical security is one of the most important parts of security -&amp;gt; If someone gets physically ahold of your computer, they can pretty much do whatever they want with it. The thing is, &lt;strong&gt;physical security is really hard&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-examples-of-physical-security-and-their-flaws&quot;&gt;Some examples of physical security and their flaws&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Locks, nearly all locks can be picked, how about breaking the lock, maybe breaking the door, removing the hinges.&lt;/li&gt;
+  &lt;li&gt;Burning paper, the ashes still have traces of the information, just shrunken.&lt;/li&gt;
+  &lt;li&gt;Writing someone down on paper can leave a trace below.&lt;/li&gt;
+  &lt;li&gt;Shredding paper can be put back together with some time&lt;/li&gt;
+  &lt;li&gt;Different clicks on a keyboard have different sounds, which can be analysed.&lt;/li&gt;
+  &lt;li&gt;Some tamper proof/evident seals can be removed and put back on without notice
+    &lt;ul&gt;
+      &lt;li&gt;soaked off then glued back on.&lt;/li&gt;
+      &lt;li&gt;apple uses a certain type of ink that dissolves in air, but you can also buy it off ebay and reapply.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;recon-and-osint&quot;&gt;Recon and OSINT&lt;/h2&gt;
+
+&lt;p&gt;One of the best ways to prepare for an attack is to look into the system both &lt;strong&gt;Passively (such as searching online) and Actively (talking to people, entering the location)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;OSINT (open source intelligence) is the information you can find about someone from content that is openly available on the internet&lt;/strong&gt;. Apart from the obvious content (name, DOB etc…), using metadata from photos, analysis of photos, information on family etc… can reveal far more!&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h1 id=&quot;secrets&quot;&gt;&lt;a id=&quot;Secrets&quot;&gt;&lt;/a&gt;Secrets&lt;/h1&gt;
 
+&lt;p&gt;Most of cyber security relies on secrets, but there are some problems with secrets:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;It’s impossible to keep a secret secret.&lt;/li&gt;
+  &lt;li&gt;Once a secret is out, it can’t be made secret again.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Who do you trust with secrets? A secret getting leaked is invisible, and the longer the list of people who know the secret, the harder it is to figure out who to not trust anymore. -&amp;gt; &lt;strong&gt;if you ACTUALLY want to keep a secret, then don’t tell ANYONE!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Best way to keep something secret? Make it no longer a secret or don’t have a secret in the first place.&lt;/p&gt;
+
+&lt;h3 id=&quot;some-problems-that-we-are-faced&quot;&gt;Some problems that we are faced&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;How can I tell someone some information without others knowing about it? -&amp;gt; &lt;strong&gt;Confidentiality&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;How can I pass information around while making sure that it doesn’t get tampered with? -&amp;gt; &lt;strong&gt;Integrity&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;How can I send information knowing it’s going to the right person? -&amp;gt; &lt;strong&gt;Authentication&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;security-by-obscurity&quot;&gt;Security by Obscurity&lt;/h2&gt;
+
+&lt;p&gt;The problem with secrets, is that most people want information to be kept secret but only if they know the information. The problem with this is that we rely on secrets to keep systems secure, but if the enemy knew everything about the system and still couldn’t get in, then the system is far more secure.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“It must not be required to be secret, and it must be able to fall into the hands of the enemy without inconvenience.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In general, your equation of how secure something is should be independent of how obscure any part of it is.&lt;/p&gt;
+
+&lt;h2 id=&quot;passwords&quot;&gt;Passwords&lt;/h2&gt;
+
+&lt;p&gt;How can we make sure that the person we want can use a system, but others cannot? Give the user a &lt;strong&gt;key&lt;/strong&gt;, which is similar to a secret, but can be changed and is unique to the individual. A password is a kind of key.&lt;/p&gt;
+
+&lt;p&gt;Problems with passwords:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Humans are again the weakest link, passwords are usually made to be easily memorable, hence sometimes being a dictionary word&lt;/li&gt;
+  &lt;li&gt;Passwords can be brute forced&lt;/li&gt;
+  &lt;li&gt;People reuse passwords&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
 &lt;h1 id=&quot;ciphers&quot;&gt;&lt;a id=&quot;Ciphers&quot;&gt;&lt;/a&gt;Ciphers&lt;/h1&gt;
 
-&lt;p&gt;hello&lt;/p&gt;
+&lt;h2 id=&quot;caesar-cipher-and-substitution-cipher&quot;&gt;Caesar Cipher and Substitution Cipher:&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;A Caesar cipher shifts all messages by a certain number&lt;/strong&gt;. While everyone can have the shared secret of the encrypted message, only the recipient has the secret of how many numbers its been shifted by&lt;/p&gt;
+
+&lt;h3 id=&quot;problems&quot;&gt;Problems:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;VERY easy to decrypt without the code.&lt;/li&gt;
+  &lt;li&gt;you need to give the code to the recipient without it being leaked.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Substitution ciphers are similar, but &lt;strong&gt;substitute each letter of the alphabet with another letter&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;problems-1&quot;&gt;Problems:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;again, the substitution is a secret that could be leaked&lt;/li&gt;
+  &lt;li&gt;Can be decrypted by use of frequency analysis.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;codes&quot;&gt;Codes&lt;/h2&gt;
+
+&lt;p&gt;Instead of replacing letters, &lt;strong&gt;replace whole words with different words or symbols&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;problems-2&quot;&gt;Problems:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Cumbersome, keeps getting larger and larger&lt;/li&gt;
+  &lt;li&gt;Not easily repaired if something breaks (method is the secret)&lt;/li&gt;
+  &lt;li&gt;Hard to transport the secret to the recipient because of the size.&lt;/li&gt;
+  &lt;li&gt;Again, if the secret is out, its out.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;stenography&quot;&gt;Stenography&lt;/h2&gt;
+
+&lt;p&gt;Stenography is &lt;strong&gt;hiding the existence of the message&lt;/strong&gt;, e.g. invisible ink, pricking letters in newspapers that read out a message.&lt;/p&gt;
+
+&lt;h3 id=&quot;problems-3&quot;&gt;Problems:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Once the secret is out, its out&lt;/li&gt;
+  &lt;li&gt;with enough searching, anyone should be able to find the message (security by obscurity).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;exponential-growth-and-bits-of-work&quot;&gt;&lt;a id=&quot;ExponentialGrowthandBitsofWork&quot;&gt;&lt;/a&gt;Exponential Growth and Bits of Work&lt;/h1&gt;
+
+&lt;p&gt;Exponential growth is important in security as it lets us understand how much work is needed to be done to figure out some piece of information. If its an amount of work that is computable, then the information can be brute forced.&lt;/p&gt;
+
+&lt;h2 id=&quot;exponential-laws&quot;&gt;Exponential Laws&lt;/h2&gt;
+
+&lt;p&gt;$ B^E = R $&lt;/p&gt;
+
+&lt;p&gt;if you have two and need to find:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$ R = B^E $&lt;/li&gt;
+  &lt;li&gt;$ B = \sqrt[\leftroot{-3}\uproot{3}E]{R} $&lt;/li&gt;
+  &lt;li&gt;$ E = log_{B}(R) $&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some other useful log laws:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$B^e \times B^c = B^{e+c}$&lt;/li&gt;
+  &lt;li&gt;$(B^e)^c = B^{e \times c}$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;information-and-exponentials&quot;&gt;Information and Exponentials&lt;/h2&gt;
+
+&lt;p&gt;Think about how many questions you could ask to guess an object that someone is thinking of -&amp;gt; if you restrict your search by half every time (by asking a question such as “does it start with a letter in the alphabet between A and M”), then the amount of questions you would need is:
+$$ Questions = log_{2}(Possible Answers) $$&lt;/p&gt;
+
+&lt;h2 id=&quot;binary-and-bits-of-work&quot;&gt;Binary and Bits of Work&lt;/h2&gt;
+
+&lt;p&gt;A term we use to see how much computing power is needed to solve a problem (such as brute forcing a hash), we call it &lt;strong&gt;bits of work&lt;/strong&gt;, which is the number of digits in the binary number for how many computations are needed. We are just finding approximations of how much time is needed so don’t worry about being super exact!&lt;/p&gt;
+
+&lt;p&gt;To find approximately how many bits of work a number is, you need to find what the number is in base 2, then find the number digits. This can also be finding x in the equation $2^x = num$ or $x = log_2(num)$.&lt;/p&gt;
+
+&lt;p&gt;Remember log laws when doing computations on bits of work (bits of work are the power in the exponential!)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;if you want to find the average time of a computation (usually divide by 2), don’t divide the bits of work by 2, but minus 1 instead (as $2^{10} / 2 = 2^{10} \times 2^{-1} = 2^{10 - 1} = 2^9$).&lt;/li&gt;
+  &lt;li&gt;if you know it takes 9 bits of work to check a password and 20 bits of work to brute force a password, it will take 29 bits of work over all! (and 28 on average).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;avoiding-brute-for-attacks&quot;&gt;Avoiding Brute for Attacks&lt;/h2&gt;
+
+&lt;p&gt;Currently, 256-bits is the standard (for AES) size of a hash (which used to be 128-bits used). The bigger your key, the slower encryption and decryption are, so we have to find the balance speed-security tradeoff.&lt;/p&gt;
+
+&lt;p&gt;We need to think about who we are keeping our data from, who might be attacking our system. Defending against casual home-based attacker is much easier than defending against a foreign govt or NSA.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;humans-and-security&quot;&gt;&lt;a id=&quot;HumansAndSecurity&quot;&gt;&lt;/a&gt;Humans And Security&lt;/h1&gt;
+
+&lt;details&gt;
+&lt;summary&gt;List of Congitive Flaws&lt;/summary&gt;
+&lt;img src=&quot;/assets/cognitiveflaws.png&quot; /&gt;
+&lt;/details&gt;
+&lt;hr /&gt;
 
 &lt;h1 id=&quot;terminology&quot;&gt;&lt;a id=&quot;Terminology&quot;&gt;&lt;/a&gt;Terminology&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;0 Day Vulnerability&lt;/strong&gt;: An exploit in a system that the current owners don’t yet know about. Most companies have a reward system for finding 0 Day Vulnerability.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Authentication&lt;/strong&gt;: the process or action of verifying the identity of a user&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Bits of Work&lt;/strong&gt;: the amount of computational power needed to solve a problem (in the form of the index in base two).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Brute Forcing&lt;/strong&gt;: Trying all possibilities until the correct solution is found&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Confidentiality&lt;/strong&gt;: How we can pass information around without others finding out about it.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Dictionary Attack&lt;/strong&gt;: Brute forcing a password by trying combinations dictionary words&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;DOS (denial of service)&lt;/strong&gt;: an attack which makes a network unavailable to the intended users, usually done by flooding the host with requests.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Ransomware&lt;/strong&gt;: Malicious software designed to block access to a computer system until a sum of money is paid&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Entropy&lt;/strong&gt;: Infeasible for someone to extract information about the plain text when given the cypher text (and visa versa).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Integrity&lt;/strong&gt;:  the quality of being honest. (If I write you a check, integrity implies that the check has not been forged with)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Key&lt;/strong&gt;: A value used to control cryptographic operations such as decryption, encryption, signature generation, or signature verification.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Malware&lt;/strong&gt;: Software that is specifically designed to disrupt, damage, or gain unauthorized access to a computer system.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Rainbow Table&lt;/strong&gt;: A table of common passwords and their given hashes, used to brute force passwords.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ransomware&lt;/strong&gt;: Malicious software designed to block access to a computer system until a sum of money is paid&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Single points of failure&lt;/strong&gt;: a part of a system that if it fails, will stop the entire system from working. Undesirable in systems that are supposed to be available and reliable.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Social Engineering&lt;/strong&gt;: Taking advantage that humans are nearly always the weakest link of a system. An example of this are social scams such as romance dating scams.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Systematic Errors&lt;/strong&gt;: A type of error that deviates by a fixed amount from the true value of measurement.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Tamper Proof&lt;/strong&gt;: Something that is designed so that it cannot be interfered with&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Tamper Evident&lt;/strong&gt;: Something that is designed to clearly reveal and interference with its contents (e.g. jam jars that pop up when opened)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tamper Evident&lt;/strong&gt;: Something that is designed to clearly reveal any interference with it (e.g. jam jars that pop up when opened)&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Tranquility&lt;/strong&gt;: where you assume that in a static frozen position, everyone has roles and responsibilities that balance each other and everything looks fine. This is a flawed assumption, since things change over time, people change roles etc…&lt;/li&gt;
 &lt;/ul&gt;
 

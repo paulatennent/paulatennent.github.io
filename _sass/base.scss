@@ -148,8 +148,14 @@ dt {
 }
 
 ul li {
-  //list-style: symbols(&#9733);
-  list-style-image:url('../assets/bullet.png');
+  //list-style-image:url('../assets/starbulletlight3.png');
+  //list-style-image: url('../assets/bullet.png');
+  list-style-type: "\2605";
+  padding-inline-start: 10px;
+}
+
+ul li::marker {
+  color: $conifer;
 }
 
 blockquote {
@@ -180,18 +186,24 @@ code.highlighter-rouge {
 }
 
 table {
-  width: 100%;
+  //width: 100%;
   margin: 0 0 20px 0;
+  //border: 1px #b5e853;
 }
 
 th {
   text-align: left;
   border-bottom: 1px dashed #b5e853;
+  border-top: 1px solid $dove-grey;
+  border-left: 1px solid $dove-grey;
+  border-right: 1px solid $dove-grey;
   padding: 5px 10px;
 }
 
 td {
   padding: 5px 10px;
+  border: 1px solid $dove-grey;
+
 }
 
 hr {

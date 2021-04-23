@@ -1,0 +1,366 @@
+I"�Q<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#AttackerVsDefender">Attacker Vs Defender</a></li>
+  <li><a href="#TrustAndRisk">Trust and Risk</a></li>
+  <li><a href="#PhysicalSecurity">Physical Security</a></li>
+  <li><a href="#Secrets">Secrets</a></li>
+  <li><a href="#Ciphers">Ciphers</a></li>
+  <li><a href="#ExponentialGrowthandBitsofWork">Exponential Growth and Bits of Work</a></li>
+  <li><a href="#Terminology">Terminology</a></li>
+</ul>
+
+<p>Some of the main things that Richard wanted us to get out of this course were:</p>
+<ul>
+  <li><strong>Ability to analysis situations</strong>
+    <ul>
+      <li>not just believing everything you are told</li>
+      <li>seeing things from multiple perspectives</li>
+      <li>finding the root cause of problems etc..)</li>
+    </ul>
+  </li>
+  <li><strong>Have an Security Engineering Mindset</strong></li>
+  <li><strong>Security Eyes</strong>
+    <ul>
+      <li>be curious (how can you get around systems in place)</li>
+      <li>be cautious (who is collecting your data, what are peoples motives)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="attacker-vs-defender-mindset"><a id="AttackerVsDefender"></a>Attacker vs Defender Mindset</h1>
+
+<p>Think about how secure you think your house is (all the defences put in place to stop someone from breaking in). Now think of all the ways that someone could get into your house.</p>
+
+<p>Defending is FAR more difficult than attacking, as a defender you have to defend ALL points, but as an attacker, you only ned to attack one part of the system to get through.</p>
+
+<p>The <strong>defender mindset</strong> allows you to congratulate yourself on all the defence systems put in place and ignore any gaps that could cause an attack, while the <strong>attacker mindset</strong> encourages you to find any small flaws in the system that could be exploited. Even as someone defending a system, you should have the attacker mindset. <strong>Attacker Mindset &gt; Defender Mindset</strong>.</p>
+
+<h2 id="security-engineer-mindset">Security Engineer Mindset</h2>
+
+<ul>
+  <li>When thinking about Attackers in Cyber, there is no such thing as “Good Guys” and “Bad Guys”, instead, we should talk about <strong>“Gold Guys”</strong> (How much money are you willing to pay me to find an exploit).
+    <ul>
+      <li>No system is 100% secure, if you pay someone enough money, they will be able to find a flaw in a system -&gt; this is where 0 Day Prizes are useful.</li>
+    </ul>
+  </li>
+  <li><strong>“The problem with X”</strong>: Whenever humans create anything (lets call it x), although we might feel like there are a bunch of amazing things with x, there is always the problems that come along with x.</li>
+  <li><strong>Problem Solving</strong>: Make sure to never claim that you have solved the problem, and can now stop thinking about the issue. There are always more than one way to solve a problem, each have pros/cons/consequences and usually there is no <em>correct</em> or <em>best</em> answer.</li>
+  <li><strong>Humans are the weakest link</strong> in security:
+    <ul>
+      <li>Errors in code</li>
+      <li>Bad Passwords</li>
+      <li>Social Engineering</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="trust-and-risk"><a id="TrustAndRisk"></a>Trust and Risk</h1>
+
+<p>Every Cyber attack is a <strong>breach of trust</strong>. Most systems that humans create all rely on trust to work (you trust that the rules of chess you are playing by are the same as your opponent).</p>
+
+<p>What if we can’t trust the other party, there are a few ways to solve this problem:</p>
+<ul>
+  <li>Put incentive into the other party which align with your objective -&gt; if one person cuts the cake the the other person chooses, its in the incentive of the cutter to make the pieces as even as possible.</li>
+  <li>Commitment (as seen below vvv).</li>
+</ul>
+
+<h2 id="commitment">Commitment</h2>
+
+<p>If we can’t trust the other party, sometimes we can use the idea of commitment to make sure that people stick to their word.</p>
+
+<p>Here are some problems that can be fixed with commitment:</p>
+<ul>
+  <li>I’ve finished my exam paper at the correct time, but the internet went out and I can’t email the exam. How can I submit my exam later and have people trust that its the same exam as when I ended</li>
+  <li>I’m on the phone with someone who is flipping a coin. If I tell them my side, they can claim the coin landed on the other side. How can I commit to a side without letting the other person know. Also, how can the other person trust that when I reveal the side later, its the same as before the coin was tossed.</li>
+</ul>
+
+<p>Commitment can be done by hashing the message, sending the hash when you make the commitment. Later, send the actual message and other parties can check the hashes are the same, hence trust your message. This both makes sure that others can’t seem the message (due to the one way-ness of hashes) before a certain time, AND others can trust that we didn’t change our message after being revealed.</p>
+
+<p>There are a few flaws that need fixing:</p>
+<ul>
+  <li>What if we memories the hashes of things like “heads” and “tails”</li>
+  <li>What if I brute force both “heads” and “tails” with a random number at the end so that they have the same hash (which can be done via a <a href="#BirthdayAttacks">birthday attack</a>!).</li>
+</ul>
+
+<p>To fix these problems, we usually <strong>sandwich the message with 2 random numbers decided by each parties</strong> so that a brute force is impossible, and hashes are unmemorable.</p>
+
+<h2 id="risk">Risk</h2>
+
+<p>One way that we can think about risk, is <strong>Risk vs Reward</strong>, There are a few problems with risk that are important to take into account:</p>
+
+<ul>
+  <li><strong>Risk is invisible, but outcomes are not</strong>! This causes humans to be very bad at analyzing risk and making appropriate decisions. When you get away with a risk, it’s only really luck that let you get away with it, but you are the same person the person who happened to get the bad end of the risk stick</li>
+  <li><strong>Risk changes base on our experiences</strong>, after experiencing the consequences of the risk, humans seem to have a different equation of risk vs reward, but the situation is exactly the same.
+    <ul>
+      <li>this can sometimes be a good thing, <strong>if taking risks lead to learning about our mistakes, then taking the risk was a good for our understanding of the consequences</strong>.</li>
+      <li>this is the main reason why humans are terrible at low probability, high risk situation, we don’t have enough collective experience with the consequence to properly understand the risk vs reward equation.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Another way of thinking about risk is <strong>% chance of happening vs % seriousness of outcome</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>**Low Probability**</th>
+      <th>**High Probability**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Low Seriousness:**</td>
+      <td>Fish Bite</td>
+      <td>Tongue Bite</td>
+    </tr>
+    <tr>
+      <td>**High Seriousness:**</td>
+      <td>Alien Invasion (danger zone)</td>
+      <td>Earth Quake in Japan</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Anything in the ‘High Probability’ are usually alright, even if they have high seriousness, as we have most likely dealt with the issue before and know how to prepare and address the situation.</p>
+
+<p><strong>Low Probability High Seriousness risks are the danger zone</strong>, as the risk is currently invisible and we usually wont prepare for it very well. The conundrum is that there are an infinite amount of Low Probability High Seriousness risks, so we need to be able to manage how we allocate time and resources to each one properly. (e.g, we give lots of time and money to terrorist attacks! but when COVID came along, we didn’t have any procedures or infrastructure in pace to help manage it!).</p>
+
+<h3 id="other-types-of-risk-include">Other types of risk include:</h3>
+<ul>
+  <li><strong>Independent vs correlated risks</strong> -&gt; Humans usually assume things are independent as correlated risks are harder to understand.
+    <ul>
+      <li><strong>Causation vs Corelation</strong> (Ice-cream causes violence in summer).</li>
+    </ul>
+  </li>
+  <li><strong>Random errors vs Systematic errors</strong> -&gt; random errors seem to even out, but systematic errors can build up over time.</li>
+</ul>
+
+<h2 id="type-1-type-2-errors">Type 1 Type 2 Errors</h2>
+
+<p><strong>Type 1 Type 2 errors are false positive and false negative errors</strong>, which end up <strong>balance each other out</strong> (when one goes up, the other goes down).</p>
+
+<p>An example of type one type two errors are:</p>
+<ul>
+  <li><strong>Type 1 (the FALSE POSITIVE)</strong>: test says you are pregnant, but you really aren’t</li>
+  <li><strong>Type 2 (the FALSE NEGATIVE)</strong>: test says you aren’t pregnant, but you really are.</li>
+</ul>
+
+<p>some other examples of T1T2 Errors:</p>
+<ul>
+  <li>giving welfare to people who don’t need it vs someone who needs it not getting it</li>
+  <li>accuse someone of being a terrorist (and potentially get them in jail), or let a terrorist slip through security and cause an attack?</li>
+  <li>An attacker signing in as an admin vs an admin being blocked to sign in as it suspects them being an attacker!</li>
+</ul>
+
+<p>With most things, there will be a type 1 and type 2 errors, we should analyse the risk of each situation to figure out which side is less risky. Contrary to this, in real life, the visible side usually gets the most attention (people not being able to sign in is much more visible than the risk of someone else signing into their account!)</p>
+
+<p>Make sure to look for T1T2 errors in politics and real life! They are everywhere! Think about which side is better/worse. Do we want to balance the risks or not? If we look at T1T2 errors with the COVID hotel quarantine, the government decided to tip the scale to one side (false positive), since having a few cases slip through the gaps would be a similar outcome to not quarantining at all.)</p>
+
+<h2 id="dealing-with-risk">Dealing with Risk</h2>
+
+<ul>
+  <li><strong>Mitigate the risk</strong>: Reduce the impact, does not reduce the probability.</li>
+  <li><strong>Pass on the risk</strong>: e.g. casinos pass risk to government (invisible)</li>
+  <li><strong>Immunize/Invest</strong>: Invest in the probability of risk actually occurring. e.g. an airline company risks oil prices rising, they will then invest in oil to balance out their portfolio in case the risk comes to fruition.</li>
+  <li><strong>Accept</strong>: ehh its ok</li>
+  <li><strong>Pool</strong>: share risk amongst lots of people (eg. Insurance)</li>
+</ul>
+
+<hr />
+
+<h1 id="physical-security"><a id="PhysicalSecurity"></a>Physical Security</h1>
+
+<p>Even for cyber security, physical security is one of the most important parts of security -&gt; If someone gets physically ahold of your computer, they can pretty much do whatever they want with it. The thing is, <strong>physical security is really hard</strong>.</p>
+
+<h3 id="some-examples-of-physical-security-and-their-flaws">Some examples of physical security and their flaws</h3>
+<ul>
+  <li>Locks, nearly all locks can be picked, how about breaking the lock, maybe breaking the door, removing the hinges.</li>
+  <li>Burning paper, the ashes still have traces of the information, just shrunken.</li>
+  <li>Writing someone down on paper can leave a trace below.</li>
+  <li>Shredding paper can be put back together with some time</li>
+  <li>Different clicks on a keyboard have different sounds, which can be analysed.</li>
+  <li>Some tamper proof/evident seals can be removed and put back on without notice
+    <ul>
+      <li>soaked off then glued back on.</li>
+      <li>apple uses a certain type of ink that dissolves in air, but you can also buy it off ebay and reapply.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="recon-and-osint">Recon and OSINT</h2>
+
+<p>One of the best ways to prepare for an attack is to look into the system both <strong>Passively (such as searching online) and Actively (talking to people, entering the location)</strong></p>
+
+<p><strong>OSINT (open source intelligence) is the information you can find about someone from content that is openly available on the internet</strong>. Apart from the obvious content (name, DOB etc…), using metadata from photos, analysis of photos, information on family etc… can reveal far more!</p>
+
+<hr />
+
+<h1 id="secrets"><a id="Secrets"></a>Secrets</h1>
+
+<p>Most of cyber security relies on secrets, but there are some problems with secrets:</p>
+<ul>
+  <li>It’s impossible to keep a secret secret.</li>
+  <li>Once a secret is out, it can’t be made secret again.</li>
+</ul>
+
+<p>Who do you trust with secrets? A secret getting leaked is invisible, and the longer the list of people who know the secret, the harder it is to figure out who to not trust anymore. -&gt; <strong>if you ACTUALLY want to keep a secret, then don’t tell ANYONE!</strong></p>
+
+<p>Best way to keep something secret? Make it no longer a secret or don’t have a secret in the first place.</p>
+
+<h3 id="some-problems-that-we-are-faced">Some problems that we are faced</h3>
+<ul>
+  <li>How can I tell someone some information without others knowing about it? -&gt; <strong>Confidentiality</strong></li>
+  <li>How can I pass information around while making sure that it doesn’t get tampered with? -&gt; <strong>Integrity</strong></li>
+  <li>How can I send information knowing it’s going to the right person? -&gt; <strong>Authentication</strong></li>
+</ul>
+
+<h2 id="security-by-obscurity">Security by Obscurity</h2>
+
+<p>The problem with secrets, is that most people want information to be kept secret but only if they know the information. The problem with this is that we rely on secrets to keep systems secure, but if the enemy knew everything about the system and still couldn’t get in, then the system is far more secure.</p>
+
+<blockquote>
+  <p>“It must not be required to be secret, and it must be able to fall into the hands of the enemy without inconvenience.”</p>
+</blockquote>
+
+<p>In general, your equation of how secure something is should be independent of how obscure any part of it is.</p>
+
+<h2 id="passwords">Passwords</h2>
+
+<p>How can we make sure that the person we want can use a system, but others cannot? Give the user a <strong>key</strong>, which is similar to a secret, but can be changed and is unique to the individual. A password is a kind of key.</p>
+
+<p>Problems with passwords:</p>
+<ul>
+  <li>Humans are again the weakest link, passwords are usually made to be easily memorable, hence sometimes being a dictionary word</li>
+  <li>Passwords can be brute forced</li>
+  <li>People reuse passwords</li>
+</ul>
+
+<hr />
+
+<h1 id="ciphers"><a id="Ciphers"></a>Ciphers</h1>
+
+<h2 id="caesar-cipher-and-substitution-cipher">Caesar Cipher and Substitution Cipher:</h2>
+
+<p><strong>A Caesar cipher shifts all messages by a certain number</strong>. While everyone can have the shared secret of the encrypted message, only the recipient has the secret of how many numbers its been shifted by</p>
+
+<h3 id="problems">Problems:</h3>
+<ul>
+  <li>VERY easy to decrypt without the code.</li>
+  <li>you need to give the code to the recipient without it being leaked.</li>
+</ul>
+
+<p>Substitution ciphers are similar, but <strong>substitute each letter of the alphabet with another letter</strong>.</p>
+
+<h3 id="problems-1">Problems:</h3>
+<ul>
+  <li>again, the substitution is a secret that could be leaked</li>
+  <li>Can be decrypted by use of frequency analysis.</li>
+</ul>
+
+<h2 id="code">Code</h2>
+
+<p>Instead of replacing letters, <strong>replace whole words with different words or symbols</strong></p>
+
+<h3 id="problems-2">Problems:</h3>
+<ul>
+  <li>Cumbersome, keeps getting larger and larger</li>
+  <li>Not easily repaired if something breaks (method is the secret)</li>
+  <li>Hard to transport the secret to the recipient because of the size.</li>
+  <li>Again, if the secret is out, its out.</li>
+</ul>
+
+<h2 id="stenography">Stenography</h2>
+
+<p>Stenography is <strong>hiding the existence of the message</strong>, e.g. invisible ink, pricking letters in newspapers that read out a message.</p>
+
+<h3 id="problems-3">Problems:</h3>
+<ul>
+  <li>Once the secret is out, its out</li>
+  <li>with enough searching, anyone should be able to find the message (security by obscurity).</li>
+</ul>
+
+<hr />
+<h1 id="exponential-growth-and-bits-of-work"><a id="ExponentialGrowthandBitsofWork"></a>Exponential Growth and Bits of Work</h1>
+
+<p>Exponential growth is important in security as it lets us understand how much work is needed to be done to figure out some piece of information. If its an amount of work that is computable, then the information is not secure.</p>
+
+<h2 id="exponential-laws">Exponential Laws</h2>
+
+<p>$ B^E = R $</p>
+
+<p>if you have two and need to find:</p>
+<ul>
+  <li>$ R = B^E $</li>
+  <li>$ B = \sqrt{R} $</li>
+  <li>$ E = log_{B}(R) $</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>:             Here’s an Inline Attribute Lists example                :|||</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>:       :</td>
+      <td>:  &lt;div style="color: red;"&gt; &lt; Normal HTML Block &gt; &lt;/div&gt; :||</td>
+    </tr>
+    <tr>
+      <td>^^</td>
+      <td>Red    {: .cls style="background: orange" }                ||</td>
+    </tr>
+    <tr>
+      <td>^^ IALs</td>
+      <td>Green  {: #id style="background: green; color: white" }    ||</td>
+    </tr>
+    <tr>
+      <td>^^</td>
+      <td>Blue   {: style="background: blue; color: white" }         ||</td>
+    </tr>
+    <tr>
+      <td>^^</td>
+      <td>Black  {: color-style text-style }                         ||</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoicGllIHRpdGxlIFBldHMgYWRvcHRlZCBieSB2b2x1bnRlZXJzXG5cIkRvZ3NcIiA6IDM4NlxuXCJDYXRzXCIgOiA4NVxuXCJSYXRzXCIgOiAzNSIsIm1lcm1haWQiOm51bGx9" /></p>
+
+<p>🧐 emoji</p>
+
+<h2 id="how">How</h2>
+
+<hr />
+
+<h1 id="terminology"><a id="Terminology"></a>Terminology</h1>
+
+<ul>
+  <li><strong>0 Day Vulnerability</strong>: An exploit in a system that the current owners don’t yet know about. Most companies have a reward system for finding 0 Day Vulnerability.</li>
+  <li><strong>Authentication</strong>: the process or action of verifying the identity of a user</li>
+  <li><strong>Brute Forcing</strong>: Trying all possibilities until the correct solution is found</li>
+  <li><strong>Confidentiality</strong>: How we can pass information around without others finding out about it.</li>
+  <li><strong>Dictionary Attack</strong>: Brute forcing a password by trying combinations dictionary words</li>
+  <li><strong>DOS (denial of service)</strong>: an attack which makes a network unavailable to the intended users, usually done by flooding the host with requests.</li>
+  <li><strong>Entropy</strong>: Infeasible for someone to extract information about the plain text when given the cypher text (and visa versa).</li>
+  <li><strong>Integrity</strong>:  the quality of being honest. (If I write you a check, integrity implies that the check has not been forged with)</li>
+  <li><strong>Key</strong>: A value used to control cryptographic operations such as decryption, encryption, signature generation, or signature verification.</li>
+  <li><strong>Malware</strong>: Software that is specifically designed to disrupt, damage, or gain unauthorized access to a computer system.</li>
+  <li><strong>Rainbow Table</strong>: A table of common passwords and their given hashes, used to brute force passwords.</li>
+  <li><strong>Ransomware</strong>: Malicious software designed to block access to a computer system until a sum of money is paid</li>
+  <li><strong>Single points of failure</strong>: a part of a system that if it fails, will stop the entire system from working. Undesirable in systems that are supposed to be available and reliable.</li>
+  <li><strong>Social Engineering</strong>: Taking advantage that humans are nearly always the weakest link of a system. An example of this are social scams such as romance dating scams.</li>
+  <li><strong>Systematic Errors</strong>: A type of error that deviates by a fixed amount from the true value of measurement.</li>
+  <li><strong>Tamper Proof</strong>: Something that is designed so that it cannot be interfered with</li>
+  <li><strong>Tamper Evident</strong>: Something that is designed to clearly reveal and interference with its contents (e.g. jam jars that pop up when opened)</li>
+  <li><strong>Tranquility</strong>: where you assume that in a static frozen position, everyone has roles and responsibilities that balance each other and everything looks fine. This is a flawed assumption, since things change over time, people change roles etc…</li>
+</ul>
+
+:ET
