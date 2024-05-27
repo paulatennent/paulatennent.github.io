@@ -38,7 +38,8 @@ layout: ../../layouts/base.astro
 - Do all the labs (free marks)
 - Just code ALOT!
 - Ask for help regularly
-- *Things that don't really help: writing notes, rewatching lectures*
+- *Things that don't really help: writing excessive notes, rewatching lectures,
+  being stuck on a bug for hours*
 
 ## Part 3: Introduction to Linux
 
@@ -64,4 +65,16 @@ $ ./print_face
 
 ## Part 5: Going to the lab
 
-- When exiting the room, tell me who your CODING BUDDY is
+- When in the lab, google: **comp1511 cgi** -> **check that the url says "24T2"**
+  (blue website).
+- Pair Programming:
+    - Find someone to be your **programming buddy**
+    - Let me know who your buddies are during the lab -> we can mix it up
+      halfway thorugh the term 
+    - **You can submit the exact same
+      code**
+
+---
+
+### *Feedback Form*
+**Link to Anomyous Feedback Form ->**
