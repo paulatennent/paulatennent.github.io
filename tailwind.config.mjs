@@ -4,7 +4,8 @@ export default {
 	theme: {
 		extend: {
       fontFamily: { 
-        'ubuntu': ['"ubuntu"'],
+        'ubuntu': ['"ubuntu"', '"noto color emoji"'],
+        'noto': ['"noto sans"', '"noto color emoji"'],
       },
       typography: ({ theme }) => ({
         basic: {
@@ -16,6 +17,8 @@ export default {
             '--tw-prose-links': theme('colors.indigo[600]'),
             '--tw-prose-bold': theme('colors.indigo[600]'),
             '--tw-prose-hr': theme('colors.indigo[600]'),
+            '--tw-prose-bullets': theme('colors.pink[600]'),
+            '--tw-prose-counters': theme('colors.pink[600]'),
             'a:hover': {
               color: theme('colors.pink[600]'),
             },
