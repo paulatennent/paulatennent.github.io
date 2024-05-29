@@ -22,6 +22,22 @@ export default {
             'a:hover': {
               color: theme('colors.pink[600]'),
             },
+            'code::before': {
+              content: 'none'
+            },
+            'code::after': {
+              content: 'none'
+            },
+            'p > code, li > code, dd > code, td > code': {
+              color: theme('colors.stone[200]'),
+              backgroundColor: theme('colors.gray[700]'),
+              borderRadius: theme('borderRadius.DEFAULT'),
+              fontWeight: 'normal',
+              paddingLeft: theme('spacing[1.5]'),
+              paddingRight: theme('spacing[1.5]'),
+              paddingTop: theme('spacing.7px'),
+              paddingBottom: theme('spacing.7px'),
+            },
           },
         },
       }),

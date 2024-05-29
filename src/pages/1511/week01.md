@@ -28,7 +28,8 @@ layout: ../../layouts/base.astro
 - Get marks from: **Weekly Problem Sets, Assignments, Exam**
 
 ### Need help?
-- **Forum:** programming questions
+- **Forum:** 99% of questions, q's relevant to others, code debugging, just
+  about anything
 - **Help Sessions:** face to face, 1 on 1 help
 - **My Email/Teams:** Class specific stuff or personal issues (aka, struggling to
   keep up).
@@ -38,7 +39,7 @@ layout: ../../layouts/base.astro
 - Do all the labs (free marks)
 - Just code ALOT!
 - Ask for help regularly
-- *Things that don't really help: writing excessive notes, rewatching lectures,
+- ***Things that don't really help:** writing excessive notes, rewatching lectures,
   being stuck on a bug for hours*
 
 ## Part 3: Introduction to Linux
@@ -72,9 +73,15 @@ $ ./print_face
     - Let me know who your buddies are during the lab -> we can mix it up
       halfway thorugh the term 
     - **You can submit the exact same
-      code**
+      code** ... [How to send code via the terminal!](/sending_via_terminal)
 
 ---
 
-### *Feedback Form*
-**Link to Anomyous Feedback Form ->**
+### *Feedback*
+
+Any feedback (positive or negative) about how I run my class is greatly appreachated!
+
+If you have feedback for the course, you can also put it here and I'll pass it
+onto the admins.
+
+**[Link to Anomyous Feedback Form](https://forms.gle/5aMX65jinYUuMBwo8)**
