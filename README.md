@@ -4,4 +4,5 @@ Made with:
 - tailwind/typography : for nice css for markdown->html conversion
 - github pages : for hosting
 
-go to <paulatennent.github.io> to see the site!
+go to <a href="https://paulatennent.github.io" target="_blank">paulatennent.github.io</a>
+ to see the site!
