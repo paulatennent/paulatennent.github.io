@@ -22,12 +22,6 @@ export default {
             'a:hover': {
               color: theme('colors.pink[600]'),
             },
-            'code::before': {
-              content: 'none'
-            },
-            'code::after': {
-              content: 'none'
-            },
             'p > code, li > code, dd > code, td > code': {
               color: theme('colors.stone[200]'),
               backgroundColor: theme('colors.gray[700]'),
