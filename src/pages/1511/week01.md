@@ -60,8 +60,16 @@ $ ./print_face
   ~ ~
   0 0
    o
-   -
+   _
 ```
+- Next, edit the face to look like:
+```
+  ~ ~
+  0 0
+   o
+  \_/
+```
+
 
 ## Part 5: Going to the lab
 
