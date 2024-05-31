@@ -6,3 +6,5 @@ Made with:
 
 go to <a href="https://paulatennent.github.io" target="_blank">paulatennent.github.io</a>
  to see the site!
+
+plz don't open on mobile :')))
