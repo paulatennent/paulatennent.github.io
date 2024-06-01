@@ -3,6 +3,9 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+      colors: {
+        'off-white': '#F0EEE6',
+      },
       fontFamily: { 
         'ubuntu': ['"ubuntu"', '"noto color emoji"'],
         'noto': ['"noto sans"', '"noto color emoji"'],
