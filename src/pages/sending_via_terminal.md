@@ -9,12 +9,15 @@ title: "Sending Code via the Terminal"
 **... Pair Programming? Skip to [sending between cse
 accounts](#sending-between-cse-accounts)**
 
+
 ---
 
-To learn how to send files to different machines via the terminal we need to learn how the `scp`
-command works. Its very similar to `cp`, so we can learn that first!
+## Table of Contents
+
 
 ## The `cp` command
+
+To send files via the terminal, we use the `scp` command. It's very similar to `cp`, so we can learn that first!
 
 ### Copying Files
 

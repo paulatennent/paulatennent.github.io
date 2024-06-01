@@ -5,6 +5,8 @@ title: "Week 1 Tutorial"
 # Week 1 Tutorial
 ---
 
+## Table of Contents
+
 ## Welcome to 1511!
 
 - Super fun course, BUT lots of work!
@@ -85,7 +87,7 @@ $ ./print_face
 
 ---
 
-### *Feedback*
+## *Feedback*
 
 Any feedback (positive or negative) about how I run my class is greatly appreachated!
 
