@@ -1,9 +1,9 @@
 ---
-const { title } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 <html lang="en">
   <head>
-    <title>{title}</title>
+    <title>{frontmatter.title}</title>
   </head>
   <body class="bg-off-white font-ubuntu">
     <div class="flex justify-center">
