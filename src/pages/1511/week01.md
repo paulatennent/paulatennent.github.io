@@ -1,5 +1,6 @@
 ---
 layout: ../../layouts/base.astro
+title: "Week 1 Tutorial"
 ---
 # Week 1 Tutorial
 ---

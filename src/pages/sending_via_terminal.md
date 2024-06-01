@@ -1,5 +1,6 @@
 ---
 layout: ../layouts/base.astro
+title: "Sending Code via the Terminal"
 ---
 
 # Sending code via the Terminal
