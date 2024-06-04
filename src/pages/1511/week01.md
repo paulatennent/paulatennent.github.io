@@ -51,6 +51,32 @@ Together we will:
 - Difference between the Terminal and the Text editor
 - Some terminal commands
 
+<details>
+<summary>some terminal commands:</summary>
+
+- `pwd` print the current directory
+- `ls` contents of current directory
+- `cd` change directory, -- `cd lab01`
+- `cat` print out the file contents -- `cat helloworld.c`
+- `code` open vscode -- `code helloworld.c` or `code .` (open the current folder)
+- `dcc` compile code -- `dcc helloworld.c -o helloworld`
+    - the `-o` means: name my output file "helloworld".
+- `./` run an executable -- `./helloworld`
+- `mv` move/rename a file/directory -- `mv helloworld.c hello_world.c`
+
+Some other useful things:
+
+- `..` means the parent directory (e.g. `cd ..` is move to the parent
+  directory).
+- `.` means the current directory (e.g. `code .` is open the current directory,
+  `mv lab01/file.c .` move file.c from the lab01 directory to the current directory.
+- flags let you change the behaviour of your command slightly. e.g. `cat file.c` prints
+  out file.c, but `cat -n file.c` prints out file.c with line numbers. The `-h`
+  (help)
+  flag usually shows you about different flags!
+
+</details>
+
 ## Part 4: CODING TOGETHER!
 
 Together we will: 
@@ -72,6 +98,24 @@ $ ./print_face
    o
   \_/
 ```
+<details>
+<summary>print_face.c</summary>
+
+```c
+#include <stdio.h>
+
+int main(void) {
+
+    printf("  ~ ~\n");
+    printf("  0 0\n");
+    printf("   o \n");
+    printf("  \\_/\n"); // the '\\' means print a single '\'
+
+    return 0;
+}
+```
+
+</details>
 
 
 ## Part 5: Going to the lab

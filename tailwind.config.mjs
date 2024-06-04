@@ -4,7 +4,10 @@ export default {
 	theme: {
 		extend: {
       colors: {
-        'off-white': '#F0EEE6',
+        'off-white': {
+          100: '#F0EEE6',
+          200: '#e0ded7',
+        },
       },
       fontFamily: { 
         'ubuntu': ['"ubuntu"', '"noto color emoji"'],
@@ -35,6 +38,19 @@ export default {
               paddingTop: theme('spacing.7px'),
               paddingBottom: theme('spacing.7px'),
             },
+            'details': {
+              backgroundColor: theme('colors.off-white[200]'),
+              borderRadius: theme('borderRadius.DEFAULT'),
+              paddingLeft: theme('spacing[3]'),
+              paddingRight: theme('spacing[3]'),
+              paddingTop: theme('spacing[1]'),
+              paddingBottom: theme('spacing[1]'),
+            },
+            'summary': {
+              cursor: 'pointer',
+              color: theme('colors.pink[600]'),
+              fontWeight: 'bold',
+            }
           },
         },
       }),
