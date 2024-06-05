@@ -37,7 +37,7 @@ e.g. Plus, `+` in C
 int main(void) {
 
     int ans = 7 / 2;
-    printf("%d", ans);
+    printf("%d\n", ans);
 
     return 0;
 }
@@ -48,7 +48,7 @@ To compile your code, do something like this:
 ```
 $ dcc maths.c -o maths
 $ ./maths
-3.5
+???
 ```
 
 **What do these result in?**
