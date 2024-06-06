@@ -14,8 +14,17 @@ As a class, we will code up some code that acts a bit like this:
 ```
 $ dcc circle.c -o circle
 $ ./circle
-What is the circle radius: 5
-Circle with radius 5 has area 78.54.
+The radius is 5
+The area 78.54
+```
+
+Change it up to scan in a value for the radius
+
+```
+$ dcc circle.c -o circle
+$ ./circle
+Enter a radius: 5
+The area is 78.54
 ```
 
 ## Part 2: Operators in C
@@ -28,7 +37,7 @@ e.g. Plus, `+` in C
 
 ## Part 3: Weird arithmetic in C
 
-**TASK - One Computer per Table**
+**TASK -- 1 Computer per Table**
 - On your computer, open up a file called `maths.c` that contains:
 
 ```c
@@ -58,11 +67,9 @@ $ ./maths
 - `char ans = 'F' - 'A' + 'a'` (print with `%c`)
 - `int ans = 10 % 3` and `-10 % 3` (print with `%d`)
 
-
-
 ## Part 4: Diagraming
 
-**TASK -- in groups of ~4**
+**TASK -- per table**
 1. On the whiteboard, create a **flow chart** to determine **if a year is a leap year** or not
 2. If you finish early, try writing some pseudo-code by converting each
    **question** in the flow chat to an **if statement**
@@ -70,7 +77,6 @@ $ ./maths
 ## Part 5: Practical Coding
 
 **Lets code up a program that:**
-
 
 1. Scan in the users height.
 2. If the height is 0 or less, it should print an error message,
