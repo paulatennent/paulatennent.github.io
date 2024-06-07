@@ -87,6 +87,7 @@ e.g. Plus, `+` in C
     - power doesn't exist, use the math library for this :)
 - logic operators: `&&`, `||`, `!`
 - comparison operators: `<`, `>`, `<=`, `>=`, `!=`, `==`
+- shorthand math operators: `++`, `--`, `+=`, `-=`. `/=`, `*=`, `%=`
 - unary operators: `!`, `-`
 - weird operators (not used in 1511) `&`, `^`, `|`, `~`, `>>`, `<<`
 
