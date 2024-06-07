@@ -95,6 +95,16 @@ What is your height: 200
 You can ride alone
 ```
 
+## Lab
+Pair Programming
+- You can **send code to your partner** but:
+- Add **both your zids at the top**
+
+```
+$ # to send kangaroo.c to your friend; z5555555
+$ scp kangaroo.c z5555555@login:.
+```
+
 ---
 
 ## *Feedback*
