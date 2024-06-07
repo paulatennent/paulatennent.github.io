@@ -29,7 +29,7 @@ The area is 78.54
 
 ## Part 2: Operators in C
 
-**TASK - In table groups:**
+**TASK -- per table**
 - On your table, write down as many operators that you know.
 - Do you know what the C language equivelent is?
 
@@ -37,7 +37,7 @@ e.g. Plus, `+` in C
 
 ## Part 3: Weird arithmetic in C
 
-**TASK -- 1 Computer per Table**
+**TASK -- 1 computer per table**
 - On your computer, open up a file called `maths.c` that contains:
 
 ```c
