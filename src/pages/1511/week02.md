@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/base.astro
-title: "Week 1 Tutorial"
+title: "Week 2 Tutorial"
 ---
 # Week 2 Tutorial
 ---
@@ -17,6 +17,26 @@ $ ./circle
 The radius is 5
 The area 78.54
 ```
+<details>
+<summary>circle.c</summary>
+
+```c
+// This program calculates the area of a circle
+#include <stdio.h>
+
+#define PI 3.14
+
+int main(void) {
+	int radius = 5;
+    double area = PI * radius * radius;
+
+    printf("The radius is %d\n", radius);
+	printf("The area is %.2lf\n", area);
+
+    return 0;
+}
+```
+</details>
 
 Change it up to scan in a value for the radius
 
@@ -26,6 +46,29 @@ $ ./circle
 Enter a radius: 5
 The area is 78.54
 ```
+<details>
+<summary>circle.c</summary>
+
+```c
+// This program calculates the area of a circle
+#include <stdio.h>
+
+#define PI 3.14
+
+int main(void) {
+    int radius;
+    printf("Enter a radius: ");
+    scanf("%d", &radius);
+
+    double area = PI * radius * radius;
+
+    printf("The area is %.2lf\n", area);
+
+    return 0;
+}
+```
+</details>
+
 
 ## Part 2: Operators in C
 
@@ -34,6 +77,20 @@ The area is 78.54
 - Do you know what the C language equivelent is?
 
 e.g. Plus, `+` in C
+<details>
+<summary>operators</summary>
+
+- maths operators: `+`, `-`, `/`, `*`, `%`
+    - If both variables are integers, `/` will do integer division. e.g. `7/2 ==
+      3` but `7.0/2 == 3.5`
+    - `%` is modulus (aka remainder)
+    - power doesn't exist, use the math library for this :)
+- logic operators: `&&`, `||`, `!`
+- comparison operators: `<`, `>`, `<=`, `>=`, `!=`, `==`
+- unary operators: `!`, `-`
+- weird operators (not used in 1511) `&`, `^`, `|`, `~`, `>>`, `<<`
+
+</details>
 
 ## Part 3: Weird arithmetic in C
 
@@ -59,6 +116,7 @@ $ dcc maths.c -o maths
 $ ./maths
 ???
 ```
+
 
 **What do these result in?**
 - The code given above?
@@ -94,6 +152,40 @@ $ ./height
 What is your height: 200
 You can ride alone
 ```
+<details>
+<summary>height.c</summary>
+
+```c
+#include <stdio.h>
+
+#define MIN_HEIGHT 100
+#define RIDE_ALONE_HEIGHT 150
+
+int main(void) {
+
+    int height;
+    printf("What is your height: ");
+    scanf("%d", &height)
+
+    if (height <= 0) {
+        printf("invalid height\n");
+        // we could return, or just add the rest as an else if
+        // usually we return for error messages
+        return 0;
+    }
+
+    if (height < MIN_HEIGHT) {
+        printf("You cant ride\n");
+    } else if (height < RIDE_ALONE_HEIGHT) {
+        printf("you can ride with a parent\n");
+    } else {
+        printf("You can ride alone\n");
+    }
+
+    return 0;
+}
+```
+</details>
 
 ## Lab
 Pair Programming
