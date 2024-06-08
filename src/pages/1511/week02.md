@@ -133,6 +133,15 @@ $ ./maths
 2. If you finish early, try writing some pseudo-code by converting each
    **question** in the flow chat to an **if statement**
 
+<details>
+<summary>Flow chart and bonus venn diagram</summary>
+
+There are multiple solutions for this flow chart, here is one example!
+
+<img src="/leap_year_flowchart.png" alt="leap year flowchart" class="w-80"/>
+<img src="/leap_year_venn.png" alt="venn diagram"/>
+</details>
+
 ## Part 5: Practical Coding
 
 **Lets code up a program that:**
