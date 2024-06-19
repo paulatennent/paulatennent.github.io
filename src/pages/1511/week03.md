@@ -270,6 +270,34 @@ Sum was 9
 3. Enter a series of characters. For each character, print it out. Stop when you
   reach either a `'q'` or `[ctrl-d]`.
 
+## Hint for Lab - CUSTOM CAKE
+
+Have a think about what the following code prints out...
+
+```
+int main(void) {
+    char c;
+    scanf(" %c", &c);
+    printf("%c\n, c);
+    scanf(" %c", %c);
+    printf("%c\n, c);
+    scanf(" %c", %c);
+    printf("%c\n, c);
+
+}
+```
+
+You can test out the code with these cases:
+
+- The regular case is inputting: `a`, enter, `b`, enter, `c`, enter.
+- What about if we input `abc` then press enter?
+- What about `ab`, enter, `c`, enter?
+
+**Whats going on**
+
+If you enter in *too many* values for scanf, it stores the aside in this place
+called the "Buffer".
+
 ---
 
 ## *Feedback*
