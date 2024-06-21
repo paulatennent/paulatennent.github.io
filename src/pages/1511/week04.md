@@ -30,25 +30,6 @@ Lets see how we go debugging the code on the board?
           largest you ahve seen so far!*
     - Print out the element
 
-## Part 3: Functions
-
-I'll demo some function code!
-
-**...Guide to making functions**
-1. Determine the **function name**
-2. Add it to your main function -> **pretend it exists**
-3. Create the **function layout**
-4. Fill in **inputs + outputs**
-5. Fill in the **body**
-
-**...When to use functions?**
-- Any code that gets repeated
-- Chunks of code that do 1 thing
-- Complicated lines (e.g. pythag)
-- Any kind of logic
-- The goal is for main to feel more like an overview of the program
-
-
 <details>
 <summary>solutions.c</summary>
 
@@ -97,6 +78,24 @@ int main(void) {
 }
 ```
 </details>
+
+## Part 3: Functions
+
+I'll demo some function code!
+
+**...Guide to making functions**
+1. Determine the **function name**
+2. Add it to your main function -> **pretend it exists**
+3. Create the **function layout**
+4. Fill in **inputs + outputs**
+5. Fill in the **body**
+
+**...When to use functions?**
+- Any code that gets repeated
+- Chunks of code that do 1 thing
+- Complicated lines (e.g. pythag)
+- Any kind of logic
+- The goal is for main to feel more like an overview of the program
 
 
 <details>
