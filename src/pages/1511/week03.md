@@ -27,6 +27,24 @@ How many 'l's: 5
 helllllo
 ```
 
+<details>
+<summary>hello.c</summary>
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    printf("he");
+    int i = 0;
+    while (i < 10) {
+        printf("l");
+        i++;
+    }
+    printf("o\n");
+}
+```
+</details>
+
 **TASK - Per Table**
 1. On your table, pick one of the code snippets below
 2. Hand execute the code and determine what it prints out
@@ -135,6 +153,33 @@ helllllo
 helllllo
 helllllo
 ```
+
+<details>
+<summary>hello.c</summary>
+
+```c
+#include <stdio.h>
+
+int main(void) {
+
+    int i = 0;
+    while (i < 20) {
+    
+        // print hell..llo
+        printf("he");
+        int j = 0;
+        while (j < 10) {
+            printf("l");
+            j++;
+        }
+        printf("o\n");
+
+        i++;
+    }
+}
+```
+</details>
+
 
 **TASK - Per Table**
 1. On your table, pick one of the code snippets below
@@ -258,6 +303,42 @@ $ ./not_neg
 Sum was 9
 ```
 
+<details>
+<summary>not_neg.c</summary>
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int input;
+    int sum = 0;
+    scanf("%d", &input);
+    while (input > 0) {
+        sum += input;
+        scanf("%d", &input);
+    }
+    printf("sum is: %d\n", sum);
+}
+```
+
+or 
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int input;
+    int sum = 0;
+    while (scanf("%d", &input) == 1 && input > 0) {
+        sum += input;
+    }
+    printf("sum is: %d\n", sum);
+}
+```
+
+</details>
+
+
 **TASK -- Per Table**
 1. Determine what tells the loop to **STOP** -- `while ( ??? ) {}`
 2. Determine what happens **multiple times** -- `while () { ??? }`
@@ -296,7 +377,8 @@ You can test out the code with these cases:
 **Whats going on**
 
 If you enter in *too many* values for scanf, it stores the aside in this place
-called the "Buffer".
+called the "Buffer". When scanf happens, first it **checks the buffer** for any
+leftover values, and if its empty, it will prompt for input!
 
 ---
 
