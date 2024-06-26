@@ -14,6 +14,28 @@ Lets code up some arrays togehter!
 
 ## Part 3: Array & Function Practice
 
+**Task - 2-4ppl**: Code up one of the following functions, and add it to the
+main function:
+
+(more information on the spec is [here](https://cgi.cse.unsw.edu.au/~cs1511/24T2/tut/05/questions))
+
+1. **Initialise the galexy** ⚫⚪⚪
+    - to `.entity = EMPTY` and `.points = 0`
+2. Enter the **Planets and Nebula** ⚫⚫⚪
+    - scan in `p [row] [col] [points]` for planets
+    - scan in `n [row] [col]` for nebula (nebula have -10 points)
+    - scan in `q` for quit
+3. Enter the **starting position** ⚫⚫⚫
+    - scan in `[row] [col]` for position
+    - repeat if the position isn't valid
+    - return the player position
+4. Sum **total points** ⚫⚪⚪
+    - sum the total points for the whole galexy
+    - return the points
+5. Sum **nearby points** ⚫⚫⚪
+    - take in an radius and the player position, sum the square surrounding the player
+    - return the points
+
 ## Part 4: Strings
 
 Lets code up some strings together! We will go through:
@@ -27,7 +49,7 @@ Lets code up some strings together! We will go through:
 
 **TASK - 2-4ppl**: Code up one of the following functions:
 
-**NOTE: Make sure to use the provided heler functions too!**
+**NOTE: Make sure to use the provided helper functions too!**
 
 ```c
 // 1.
