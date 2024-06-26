@@ -6,13 +6,11 @@ title: "Week 5 Tutorial"
 ---
 ## Table of Contents
 
-## Part 1: 2D Arrays
-
-## Part 2: Arrays & Functions
+## Part 1: 2D Arrays & Functions
 
 Lets code up some arrays togehter!
 
-## Part 3: Array & Function Practice
+## Part 2: Array & Function Practice
 
 **Task - 2-4ppl**: Code up one of the following functions, and add it to the
 main function:
@@ -36,7 +34,7 @@ main function:
     - take in an radius and the player position, sum the square surrounding the player
     - return the points
 
-## Part 4: Strings
+## Part 3: Strings
 
 Lets code up some strings together! We will go through:
 
@@ -45,7 +43,7 @@ Lets code up some strings together! We will go through:
 3. Scanning strings
 4. Looping over strings
 
-## Part 5: Strings Practice
+## Part 4: Strings Practice
 
 **TASK - 2-4ppl**: Code up one of the following functions:
 
