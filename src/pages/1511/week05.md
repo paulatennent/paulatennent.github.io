@@ -6,6 +6,10 @@ title: "Week 5 Tutorial"
 ---
 ## Table of Contents
 
+## Admin
+- Assignment 1
+- Checkin Week
+
 ## Part 1: 2D Arrays & Functions
 
 Lets code up some arrays togehter!
