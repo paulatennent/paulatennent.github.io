@@ -459,7 +459,7 @@ void make_vowels_uppercase(char string[MAX_CHARS]) {
 // (hint. what defines when a string ends?)
 void delete_following_words(char string[MAX_CHARS]) {
     int i = 0;
-    while (string[i] != '\0' && string[i] != ' ') {
+    while (string[i] != '\0' && is_alpha(string[i])) {
         i++;
     }
     string[i] = '\0';
