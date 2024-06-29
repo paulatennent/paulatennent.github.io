@@ -74,109 +74,23 @@ struct position {
 };
 
 void print_map(struct celestial_body galaxy[SIZE][SIZE]);
-void init_galaxy(struct celestial_body galaxy[SIZE][SIZE]);
-void place_planets(struct celestial_body galaxy[SIZE][SIZE]);
-struct position get_starting_location(struct celestial_body galaxy[SIZE][SIZE]);
-int in_bounds(struct position p);
-int is_empty(struct celestial_body galaxy[SIZE][SIZE], struct position p);
-int get_points(struct celestial_body galaxy[SIZE][SIZE]);
-int get_points_range(struct celestial_body galaxy[SIZE][SIZE], struct position player, int radius);
 
 int main(void) {
     struct celestial_body galaxy[SIZE][SIZE];
 
     // TODO: Initialize the galaxy
-    init_galaxy(galaxy);
 
     // TODO: Place the planets and nebulae in the galaxy
-    place_planets(galaxy);
 
     // TODO: Place the player in the galaxy
-    struct position player = get_starting_location(galaxy);
 
     // TODO: Find the total points
-    int points = get_points(galaxy);
-    printf("Total points in galaxy: %d\n", points);
 
-    points = get_points_range(galaxy, player, 3);
-    printf("Points surrounding player with radius 3: %d\n", points);
-
-    return 0;
-}
-
-void init_galaxy(struct celestial_body galaxy[SIZE][SIZE]) {
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < SIZE; j++) {
-            galaxy[i][j].entity = EMPTY;
-            galaxy[i][j].points = 0;
-        }
-    }
-}
-
-void place_plantes(struct celestial_body galaxy[SIZE][SIZE]) {
-    printf("Enter planets and nebulae:\n");
-
-    char command;
-    scanf(" %c", &command);
-    while (command != 'q') {
-        int row;
-        int col;
-        if (command == 'p') {
-            int points;
-            scanf("%d %d %d", &row, &col, &points);
-            galaxy[row][col].entity = PLANET;
-            galaxy[row][col].points = points;
-        } else if (command == 'n') {
-            scanf("%d %d", &row, &col);
-            galaxy[row][col].entity = NEBULA;
-            galaxy[row][col].points = NEBULA_POINTS;
-        }
-        scanf(" %c", &command);
-    }
-}
-            
-struct position get_starting_location(struct celestial_body galaxy[SIZE][SIZE]) {
-    printf("Enter the starting position of the player: ");
-    struct position curr;
-    scanf("%d, %d", &curr.row, &curr.col);
-    while (!(in_bounds(curr) && is_empty(galaxy, curr))) {
-        printf("Invalid position, try again:");
-        scanf("%d, %d", &curr.row, &curr.col);
-    }
-    return curr;
-}
-
-int get_points(struct celestial_body galaxy[SIZE][SIZE]) {
-    int points = 0;
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < SIZE; j++) {
-            points += galaxy[i][j].points;
-        }
-    }
-    return points;
-}
-
-int get_points_range(struct celestial_body galaxy[SIZE][SIZE], struct position player, int radius) {
-    int points = 0;
-    for (int i = player.row - radius; i < player.row + radius; i++) {
-        for (int j = player.col - radius; j < player.col + radius; j++) {
-            struct position curr = {.row = i, .col = j};
-            if (in_bounds(curr)) {
-                points += galaxy[i][j].points;
-            }
-        }
-    }
-    return points;
-}
+    // TODO: Find the total points for a square radius around the player
+    // e.g. nearby_points(galaxy, p_row, p_col, 3) // for 3 radius around the
+    // player
     
-
-int in_bounds(struct position p) {
-    return (p.row >= 0 && p.row < SIZE && p.col >= 0 && p.col < SIZE);
-}
-
-
-int is_empty(struct celestial_body galaxy[SIZE][SIZE], struct position p) {
-    return galaxy[p.row][p.col].entity == EMPTY;
+    return 0;
 }
 
 // Function prints the map of the galaxy
@@ -390,6 +304,58 @@ Lets code up some strings together! We will go through:
 3. Scanning strings
 4. Looping over strings
 
+<details>
+<summary>string.c</summary>
+
+```c
+#include <stdio.h>
+
+int main(void) {
+
+    // create a string
+
+    char my_name[] = "Paula";
+    char my_name2[100] = "Paula";
+    char my_name3[] = {'P', 'a', 'u', 'l', 'a', '\0'};
+    
+
+    // print it out
+
+    printf("%s\n", my_name);
+    fputs(my_name, stdout);
+    printf("\n");
+
+
+    // change the string
+
+    my_name[4] = '\0'; // remove the last 'a'
+    // my_name = "Paulina" // ILLEGAL
+    // my_name[5] = 'y' // ILLEGAL
+    my_name2[5] = 'a';
+    my_name2[6] = '\0';
+    // now my_name2 os "Paulaa"
+
+
+    // scan in a string
+
+    char greeting[100];
+    fgets(greeting, 100, stdin);
+    // scanf("%s", greeting); // ILLEGAL -> where did the length go???
+
+
+    // print out only till the first space
+
+    int i = 0;
+    while (greeting[i] != '\0' && greeting[i] != ' ') {
+        printf("%c", greeting[i]);
+        i++;
+    }
+
+    return 0;
+}
+```
+</details>
+
 ## Part 4: Strings Practice
 
 **TASK - 2-4ppl**: Code up one of the following functions:
@@ -456,4 +422,48 @@ int is_vowel(char c);
 ```
 </details>
 
+<details>
+<summary>solution.c</summary>
 
+```c
+// 1.
+// returns the number of lowercase letters in `char *string`
+int count_lowercase(char string[MAX_CHARS]) {
+    int count = 0;
+    int i = 0;
+    while (string[i] != '\0') {
+        if (is_lower(strign[i])) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// 2.
+// modifies `char *string` by converting all its vowels to uppercase
+void make_vowels_uppercase(char string[MAX_CHARS]) {
+    int i = 0;
+    while (string[i] != '\0') {
+        if (is_vowel(string[i])) {
+            string[i] = to_upper(string[i]);
+        }
+    }
+    return;
+}
+
+// 3..
+// shortens a string so that it ends after the first word
+// e.g. "This is a sentence" should turn into:
+//      "This"
+// 
+// (hint. what defines when a string ends?)
+void delete_following_words(char string[MAX_CHARS]) {
+    int i = 0;
+    while (string[i] != '\0' && string[i] != ' ') {
+        i++;
+    }
+    string[i] = '\0';
+    return;
+}
+```
+</details>
